@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import homePic from '../pictures/home2.jpeg'
+import homePic from '../../../public/pictures/home.jpeg'
 import './mainContent.css'
 
 const MainContent = () => {

@@ -33,7 +33,7 @@ router.get('/:id', async (req, res, next) => {
 router.patch('/:id', async (req, res, next) => {
   try{
     const user = await User.findByPk(req.params.id);
-    const updatedUser = await user.update(req.body);   //edit form values when user clicks submit-sal 
+    const updatedUser = await user.update(req.body);   //edit form values when user clicks submit
     res.json(updatedUser);
   } catch (err){
     next(err);
@@ -54,9 +54,7 @@ router.get('/:id', async (req, res, next) => {
 router.post('/', async (req, res, next) => {
   try {
     const newCart = await Cart.create();
-    // console.log('newcart Id ------>', newCart.id);
     const user = await User.create({ ...req.body, cartId: newCart.id });
-    // console.log('newuser----->', user);
     res.send({ token: await user.generateToken() });
   } catch (err) {
     if (err.name === 'SequelizeUniqueConstraintError') {
@@ -73,18 +71,8 @@ router.post('/carts', async (req, res, next) => {
     // find the product in the db
     const product = await Product.findByPk(req.param.id);
 
-    // find the user cart order
-    // const currentOrder = await Cart.findOne({
-    //   where: {
-    //     // userId: req.params.userId,
-    //     status: 'CART'
-    //   }
-    // })
-
     // if the cart does not exist yet, create the cart
-    // if (!currentOrder) {
     const currentOrder = await Cart.create({
-      // userId: req.params.userId,
       status: 'CART',
     });
 

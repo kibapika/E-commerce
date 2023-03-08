@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-// import { selectAllProducts } from "../../slices/products/productSlice";
 import './allProducts.css'
 import MainContent from "../MainContent/MainContent";
 import Filter from '../Filter/Filter'
-import star from '../pictures/star.png'
+import star from '../../../public/pictures/star.png'
 import { deleteProductAsync, addProductAsync, selectAllProducts } from "../../slices/products/productSlice";
-// import {navigate} from "react-router-dom";
 
 
 const AllProducts = () => {
