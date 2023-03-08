@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../app/store.js";
@@ -9,6 +9,8 @@ import "./navbar.css";
 import OrderHx from "../OrderHx/orderHx.js";
 
 const Navbar = () => {
+  const [hState, sethState] = useState("top");
+
   const isLoggedIn = useSelector((state) => !!state.auth.me.id);
 
   const dispatch = useDispatch();
@@ -21,11 +23,30 @@ const Navbar = () => {
 
   const cart = useSelector((state) => state.cart);
 
+  useEffect(() => {
+    var lastVal = 0;
+    window.onscroll = function () {
+      let y = window.scrollY;
+      if (y > lastVal) {
+        sethState("down");
+      }
+      if (y < lastVal) {
+        sethState("up");
+      }
+      if (y === 0) {
+        sethState("top");
+      }
+      lastVal = y;
+    };
+  }, []);
+
   return (
-    <div>
-      <div id="navDiv">
-        <div id="leftNav" >
-          <img id="mainlogo" src={mainlogo} alt="mainlogo" />
+    <div id="navDiv" className={hState}>
+      <div id="nav">
+        <div id="leftNav">
+          <Link to="/home">
+            <img id="mainlogo" src={mainlogo} alt="mainlogo" />
+          </Link>
           <Link className="navLinks" to="/home">
             Home
           </Link>
@@ -36,7 +57,7 @@ const Navbar = () => {
             Order History
           </Link>
         </div>
-{/* ---------------------------------------------------------------- */}
+        {/* ---------------------------------------------------------------- */}
         <div id="rightNav">
           {isLoggedIn ? (
             <div>
@@ -50,7 +71,7 @@ const Navbar = () => {
               </button>
             </div>
           ) : (
-            <div>
+            <div id="rightNavBtn">
               {/* The navbar will show these links before you log in */}
               <Link className="navLinks" to="/login">
                 Login
@@ -60,9 +81,9 @@ const Navbar = () => {
               </Link>
             </div>
           )}
-{/* ---------------------------------------------------------------- */}
+          {/* -------------------------------------------------------------- */}
           <Link to="/cart">
-            <ShoppingBagIcon id="cart"/>
+            <ShoppingBagIcon id="cart" />
           </Link>
         </div>
       </div>

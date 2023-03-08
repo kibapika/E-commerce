@@ -1,14 +1,24 @@
 #mainContent{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
   }
   
-  #homePic{
+  /* #homePic
     width: 700px;
     height: 500px;
-  }
+  } */
+
+#sectionA {
+  height: 100vh;
+  width: 100%;
+  background-image: url("/Users/evali/Desktop/BootCamp/projects/ecommerce/E-commerce/public/pictures/home.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
   
   .filterBtns{
     background-color: black;

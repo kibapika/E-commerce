@@ -1,6 +1,29 @@
 #navDiv{
-    /* background-color: #FFFFFF; */
-    background-color: black;
+  transition: all 0.3s ease;
+  width: 100%;
+  position: fixed;
+}
+
+.top {
+  top: 0px;
+}
+
+.down {
+  top: -90px;
+}
+
+.up {
+  top: 0px;
+}
+
+.up,
+.down {
+  background: #14213d;
+  box-shadow: 0px 0px 8px #040c16;
+}
+
+#nav{
+    background-color: #FFFFFF;
     width: 100%;
     height: 100%;
     display: flex;
@@ -14,30 +37,50 @@
     justify-content: space-around;
     width: 450px;
     align-items: center;
+    padding-left: 15px;
   }
 
   #rightNav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 150px;
+    width: 200px;
     align-items: center;
     padding-right: 20px;
+  }
+
+  #rightNavBtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 150px;
   }
   
   #mainlogo{
     width: 70px;
     height: auto;
     padding: 10px;
+    border-radius: 5px;
   }
   
   .navLinks{
     color: #353535;
-    font-size: 16px;
+    font-size: 18px;
     text-decoration: none;
+  }
+
+  .navLinks:hover {
+    text-decoration: underline 2.5px;
+    color: #242423;
+    font-weight: bolder;
   }
   
   #cart{
-    font-size: 30px;
+    font-size: 35px;
     color: #353535;
+  }
+
+  #cart:hover{
+    color: #F5CB5C;
+    transition: 100ms;
   }

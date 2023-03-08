@@ -33,7 +33,7 @@ const AppRoutes = () => {
   }, [dispatch]);
 
   return (
-    <div id="routesDiv">
+    <div>
       {isLoggedIn ? (
         <Routes>
           <Route path="/products" element={<AllProducts />} />
@@ -43,7 +43,6 @@ const AppRoutes = () => {
           <Route path="/products/:id" element={<SingleProduct />} />
           <Route path="/*" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/signup" element={<SignUp />} />
           <Route path="/orderHx" element={<OrderHx />} />
           <Route
             path="/login"
@@ -60,10 +59,6 @@ const AppRoutes = () => {
           <Route path="/*" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/signup" element={<SignUp />} />
-          {/* <Route
-            path="/"
-            element={<AuthForm name="login" displayName="Login" />}
-          /> */}
           <Route
             path="/login"
             element={<AuthForm name="login" displayName="Login" />}
