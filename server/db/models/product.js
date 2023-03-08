@@ -1,7 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
 
-// made product model for the product table in the database, added rating but not sure if will currently use.
 const Product = db.define('product', {
   name: {
     type: Sequelize.STRING,
