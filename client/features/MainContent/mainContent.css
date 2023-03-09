@@ -3,13 +3,9 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    color: #353535;
   }
   
-  /* #homePic
-    width: 700px;
-    height: 500px;
-  } */
-
 #sectionA {
   height: 100vh;
   width: 100%;
@@ -19,6 +15,93 @@
   flex-direction: column;
   justify-content: flex-end;
 }
+
+#sectionAText {
+  padding-left: 60px;
+  padding-bottom: 105px;
+}
+
+#text1 {
+  font-size: 40px;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+#text2 {
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+#sectionABtn {
+  appearance: button;
+  background-color: white;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: white 4px 4px 0 0,#000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #353535;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+#sectionABtn:focus {
+  text-decoration: none;
+}
+
+#sectionABtn:hover {
+  text-decoration: none;
+  color: #D9D9D9;
+  transition: 400ms;
+}
+
+#sectionABtn:active {
+  box-shadow: rgba(0, 0, 0, .125) 0 3px 5px inset;
+  outline: 0;
+}
+
+#sectionABtn:not([disabled]):active {
+  box-shadow: #fff 2px 2px 0 0, #000 2px 2px 0 1px;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  #sectionABtn {
+    padding: 12px 50px;
+  }
+}
+
+#textABtn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#aBtnArrow {
+  padding-left: 10px;
+  font-size: 25px;
+}
+
+/* -------------------------------- */
   
   .filterBtns{
     background-color: black;

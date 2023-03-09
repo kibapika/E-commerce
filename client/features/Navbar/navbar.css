@@ -1,5 +1,5 @@
 #navDiv{
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
   width: 100%;
   position: fixed;
 }
@@ -9,7 +9,7 @@
 }
 
 .down {
-  top: -90px;
+  top: -100px;
 }
 
 .up {
@@ -56,11 +56,10 @@
     width: 150px;
   }
   
-  #mainlogo{
-    width: 70px;
+  #shoeLogo{
+    width: 105px;
     height: auto;
-    padding: 10px;
-    border-radius: 5px;
+    border-radius: 100%;
   }
   
   .navLinks{
@@ -72,7 +71,6 @@
   .navLinks:hover {
     text-decoration: underline 2.5px;
     color: #242423;
-    font-weight: bolder;
   }
   
   #cart{

@@ -3,10 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../app/store.js";
 import mainlogo from "../../../public/pictures/mainlogo.png";
+import shoeLogo from "../../../public/pictures/shoeLogo.png"
 import { ShoppingBasket } from "@mui/icons-material";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import "./navbar.css";
-import OrderHx from "../OrderHx/orderHx.js";
 
 const Navbar = () => {
   const [hState, sethState] = useState("top");
@@ -45,7 +45,7 @@ const Navbar = () => {
       <div id="nav">
         <div id="leftNav">
           <Link to="/home">
-            <img id="mainlogo" src={mainlogo} alt="mainlogo" />
+            <img id="shoeLogo" src={shoeLogo} alt="shoeLogo" />
           </Link>
           <Link className="navLinks" to="/home">
             Home

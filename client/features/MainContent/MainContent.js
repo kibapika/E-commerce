@@ -1,17 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import homePic from "../../../public/pictures/home.jpg";
+import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
+import EastIcon from '@mui/icons-material/East';
 import "./mainContent.css";
 
 const MainContent = () => {
   return (
     <div id="mainContent">
       <section id="sectionA">
-        <div>
-          <h1>Back In Stock</h1>
-          <h2>Get them while you can!</h2>
-          <Link to="/products">
-            <button type="button">Shop Now</button>
+        <div id="sectionAText">
+          <h1 id="text1">Back In Stock</h1>
+          <h2 id="text2">Get them while you can!</h2>
+          <Link id="sectionABtn" to="/products">
+            <div id="textABtn">
+              <span>Shop Now</span>
+              <EastIcon id="aBtnArrow"/>
+            </div>
           </Link>
         </div>
       </section>
@@ -22,7 +26,6 @@ const MainContent = () => {
           </button>
         </Link>
       </section>
-      {/* <img id="homePic" src={homePic} /> */}
     </div>
   );
 };
