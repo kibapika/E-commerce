@@ -48,7 +48,7 @@
   cursor: pointer;
   display: inline-block;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 20px;
   margin: 0 5px 10px 0;
   overflow: visible;
@@ -69,7 +69,7 @@
 
 #sectionABtn:hover {
   text-decoration: none;
-  color: #D9D9D9;
+  color: #6c757d;
   transition: 400ms;
 }
 
@@ -99,16 +99,160 @@
 #aBtnArrow {
   padding-left: 10px;
   font-size: 25px;
+  font-weight: bolder;
 }
 
 /* -------------------------------- */
-  
-  .filterBtns{
-    background-color: black;
-    border: solid white;
-    color: white;
-    font-size: 40px;
-    width: 300px;
-    height: 300px;
-    margin: 20px;
+
+#sectionB {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin: 10px;
+  font-size: 20px;
+}
+
+#bBtn1 {
+  background-image: url("/Users/evali/Desktop/BootCamp/projects/ecommerce/E-commerce/public/pictures/shoe1.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  width: 60vh;
+  margin-right: 10px;
+  margin-left: 10px;
+  text-decoration: none;
+  color: #353535;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+#bBtn2 {
+  background-image: url("/Users/evali/Desktop/BootCamp/projects/ecommerce/E-commerce/public/pictures/clothing.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  width: 60vh;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #353535;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+#bBtn3 {
+  background-image: url("/Users/evali/Desktop/BootCamp/projects/ecommerce/E-commerce/public/pictures/shoe2.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  width: 60vh;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #353535;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+#bBtn4 {
+  background-image: url("/Users/evali/Desktop/BootCamp/projects/ecommerce/E-commerce/public/pictures/shoe3.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  width: 60vh;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #353535;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+/* -------------------------------------- */
+
+#hide1 {
+  padding-top: 200px;
+}
+
+#bBtn1 #hide1 {
+  visibility:hidden; opacity:0;
+  transition:visibility 300ms, opacity 1s; 
+}
+
+#bBtn1:hover #hide1 {
+  visibility:visible; 
+  opacity:1;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
   }
+
+#bBtn1:hover {
+  filter: grayscale(80%);
+  transition: 300ms;
+}
+
+#hide2 {
+  padding-top: 200px;
+}
+
+#bBtn2 #hide2 {
+  visibility:hidden; opacity:0;
+  transition:visibility 300ms, opacity 1s; 
+}
+
+#bBtn2:hover #hide2 {
+  visibility:visible; 
+  opacity:1;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  }
+
+#bBtn2:hover {
+  filter: grayscale(80%);
+  transition: 300ms;
+}
+
+#hide3 {
+  padding-top: 200px;
+}
+
+#bBtn3 #hide3 {
+  visibility:hidden; opacity:0;
+  transition:visibility 300ms, opacity 1s; 
+}
+
+#bBtn3:hover #hide3 {
+  visibility:visible; 
+  opacity:1;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  }
+
+#bBtn3:hover {
+  filter: grayscale(80%);
+  transition: 300ms;
+}
+
+#hide4 {
+  padding-top: 200px;
+}
+
+#bBtn4 #hide4 {
+  visibility:hidden; opacity:0;
+  transition:visibility 300ms, opacity 1s; 
+}
+
+#bBtn4:hover #hide4 {
+  visibility:visible; 
+  opacity:1;
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  }
+
+#bBtn4:hover {
+  filter: grayscale(80%);
+  transition: 300ms;
+}
