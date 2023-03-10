@@ -1,49 +1,59 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import './footer.css'
-
+import { AiFillTwitterCircle } from "react-icons/ai";
+import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
+import { FaTiktok, FaGithub } from "react-icons/fa";
+import "./footer.css";
 
 const Footer = () => {
-// placeholder functions for buttons 
-    const AthleticBtn = () => {
-        console.log('filter athletic sneakers')
-      }
-    
-      const CasualBtn = () => {
-        console.log('filter casual sneakers')
-      }
-    
-      const SearchSneaks = () => {
-        console.log('sneakers searched')
-      }
+  return (
+    <div id="footer">
+      <section id="infoSec">
+        <div id="innerInfoSec">
+          <div className="divLinks">
+            <h1>Shop</h1>
+            <div className="links">
+              <Link>Shoes</Link>
+              <Link>Clothing</Link>
+              <Link>Best Sellers</Link>
+              <Link>New Arrivals</Link>
+            </div>
+          </div>
+          <div className="divLinks">
+            <h1>About Soles</h1>
+            <div className="links">
+              <Link>Our Story</Link>
+              <Link>Careers</Link>
+              <Link>Purpose</Link>
+              <Link>Sustainability</Link>
+              <Link>Reviews</Link>
+            </div>
+          </div>
+          <div className="divLinks">
+            <h1>Support</h1>
+            <div className="links">
+              <Link>Contact Us</Link>
+              <Link>FAQs</Link>
+              <Link>Shipping and Delivery</Link>
+              <Link>Returns</Link>
+            </div>
+          </div>
+        </div>
+        <div>
+          <Link><AiFillTwitterCircle /></Link>
+          <Link><BsFacebook /></Link>
+          <Link><BsInstagram /></Link>
+          <Link><BsYoutube /></Link>
+          <Link><FaTiktok /></Link>
+          <Link><FaGithub /></Link>
+        </div>
+      </section>
+      <section>
+        <h1>© 2023 Soles, Inc.</h1>
+        <a href="https://github.com/kibapika/Soles---Ecommerce">Soles -- GitHub</a>
+      </section>
+    </div>
+  );
+};
 
-    return(
-    // need to work on routes
-        <nav id="footerNav">
-            <ul id="footerUl">
-                <li className="footerLi">
-                <Link className='navLinks' to="/home">Shop</Link>
-                <button className='sneakBtns' type='button' onClick={AthleticBtn}>Athletic</button>
-                <button className='sneakBtns' type='button' onClick={CasualBtn}>Casual</button>
-                </li>
-                <li className="footerLi">
-                <Link className='navLinks' to="/home">Our Story</Link>
-                <Link className='navLinks' to="/home">About</Link>
-                </li>
-                <li className="footerLi">
-                <Link className='navLinks' to="/home">Help</Link>
-                <p>1 800-RandomShoes</p>
-                <p>help@randomshoes.com</p>
-                </li>
-            </ul>
-                <ul id="socials">
-                    <li className="socialLi">Twitter</li>
-                    <li className="socialLi">Facebook</li>
-                    <li className="socialLi">Instagram</li>
-                </ul>
-        </nav>
-        
-    )
-}
-
-export default Footer
+export default Footer;

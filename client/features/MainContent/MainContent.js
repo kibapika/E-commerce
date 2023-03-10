@@ -5,6 +5,7 @@ import EastIcon from "@mui/icons-material/East";
 import "./mainContent.css";
 
 const MainContent = () => {
+    
   return (
     <div id="mainContent">
       <section id="sectionA">
