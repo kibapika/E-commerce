@@ -11,46 +11,60 @@ const Footer = () => {
       <section id="infoSec">
         <div id="innerInfoSec">
           <div className="divLinks">
-            <h1>Shop</h1>
+            <h1 className="title">Shop</h1>
             <div className="links">
-              <Link>Shoes</Link>
-              <Link>Clothing</Link>
-              <Link>Best Sellers</Link>
-              <Link>New Arrivals</Link>
+              <Link className="linksTitle">Shoes</Link>
+              <Link className="linksTitle">Clothing</Link>
+              <Link className="linksTitle">Best Sellers</Link>
+              <Link className="linksTitle">New Arrivals</Link>
             </div>
           </div>
           <div className="divLinks">
-            <h1>About Soles</h1>
+            <h1 className="title">About</h1>
             <div className="links">
-              <Link>Our Story</Link>
-              <Link>Careers</Link>
-              <Link>Purpose</Link>
-              <Link>Sustainability</Link>
-              <Link>Reviews</Link>
+              <Link className="linksTitle">Our Story</Link>
+              <Link className="linksTitle">Careers</Link>
+              <Link className="linksTitle">Purpose</Link>
+              <Link className="linksTitle">Sustainability</Link>
+              <Link className="linksTitle">Reviews</Link>
             </div>
           </div>
           <div className="divLinks">
-            <h1>Support</h1>
+            <h1 className="title">Support</h1>
             <div className="links">
-              <Link>Contact Us</Link>
-              <Link>FAQs</Link>
-              <Link>Shipping and Delivery</Link>
-              <Link>Returns</Link>
+              <Link className="linksTitle">Contact Us</Link>
+              <Link className="linksTitle">FAQs</Link>
+              <Link className="linksTitle">Shipping and Delivery</Link>
+              <Link className="linksTitle">Returns</Link>
             </div>
           </div>
         </div>
         <div>
-          <Link><AiFillTwitterCircle /></Link>
-          <Link><BsFacebook /></Link>
-          <Link><BsInstagram /></Link>
-          <Link><BsYoutube /></Link>
-          <Link><FaTiktok /></Link>
-          <Link><FaGithub /></Link>
+          <Link>
+            <AiFillTwitterCircle className="icons"/>
+          </Link>
+          <Link>
+            <BsFacebook className="icons"/>
+          </Link>
+          <Link>
+            <BsInstagram className="icons"/>
+          </Link>
+          <Link>
+            <BsYoutube className="icons"/>
+          </Link>
+          <Link>
+            <FaTiktok className="icons"/>
+          </Link>
+          <a href="https://github.com/kibapika/Soles---Ecommerce">
+            <FaGithub className="icons"/>
+          </a>
         </div>
       </section>
-      <section>
-        <h1>© 2023 Soles, Inc.</h1>
-        <a href="https://github.com/kibapika/Soles---Ecommerce">Soles -- GitHub</a>
+      <section id="btmLinks">
+        <h1 id="inc">© 2023 Soles, Inc.</h1>
+        <a id="gitHub" href="https://github.com/kibapika/Soles---Ecommerce">
+          Soles -- GitHub
+        </a>
       </section>
     </div>
   );

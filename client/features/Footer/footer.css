@@ -5,12 +5,16 @@
     background-color: #242423;
     color: white;
     width: 100%;
-    height: 40vh;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
 #infoSec {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 #innerInfoSec {
@@ -21,8 +25,65 @@
 .links {
   display: flex;
   flex-direction: column;
+  height: 170px;
+  justify-content: space-evenly;
 }
 
 .divLinks {
-  
+  padding-left: 50px;
+  padding-top: 25px;
+}
+
+#btmLinks {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 20px;
+}
+
+#inc {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0;
+}
+
+#gitHub {
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+}
+
+#gitHub:hover {
+  color: #F5CB5C;
+  transition: 300ms;
+}
+
+.title {
+  letter-spacing: 1.5px;
+}
+
+
+.linksTitle {
+ text-decoration: none;
+ color: #6c757d;
+}
+
+.linksTitle:hover {
+  color: white;
+  transition: 300ms;
+  text-decoration: underline white;
+}
+
+.icons {
+  font-size: 25px;
+  color: white;
+  padding-top: 40px;
+  padding-right: 20px;
+}
+
+.icons:hover {
+  color: #F5CB5C;
+  transition: 300ms;
 }
