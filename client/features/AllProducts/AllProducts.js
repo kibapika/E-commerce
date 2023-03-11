@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import './allProducts.css'
-import MainContent from "../MainContent/MainContent";
 import Filter from '../Filter/Filter'
 import star from '../../../public/pictures/star.png'
 import { deleteProductAsync, addProductAsync, selectAllProducts } from "../../slices/products/productSlice";
@@ -11,7 +10,9 @@ import { deleteProductAsync, addProductAsync, selectAllProducts } from "../../sl
 const AllProducts = () => {
 
     const products = useSelector(selectAllProducts)
+
     const user = useSelector((state) => state.auth.me);
+
     const dispatch = useDispatch();
     console.log("user", user)
     const handleDelete = (id) => {
@@ -31,7 +32,6 @@ const AllProducts = () => {
 
     useEffect(() => {
         let tempProducts = [...products]
-// checking which category is checked and returning accordingly
         if(productFilter.types.length){
             tempProducts = tempProducts.filter((product) => {
                 return productFilter.types.includes(product.categories)
@@ -102,7 +102,7 @@ const AllProducts = () => {
                             <h2 className="sneakTitle">{product.name} ${product.price}</h2>
                             <p id="categories">{product.categories}</p>
                             {Array(product.rating).fill('').map((rating, currStar) => {
-                                return <img key={currStar} id="ratingStar" src={star}></img> 
+                                return <img id="ratingStar" key={currStar} src={star}></img>
                             })}
                         </div>
                     )

@@ -3,13 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import './singleProduct.css';
 import { addToCart, addCartAsync } from '../../slices/cart/cartslice';
-// import { addCartAsync } from '../../slices/cart/cartslice';
 import {
   fetchSingleProductAsync,
   selectSingleProduct,
   chooseSize,
 } from '../../slices/products/singleProductSlice';
-import { me } from '../Auth/authSlice';
 import axios from 'axios';
 
 
@@ -22,7 +20,6 @@ const SingleProduct = () => {
   const user = useSelector((state) => state.auth.me);
 
   const product = useSelector(selectSingleProduct);
-  // const { name, description, price, quantity, imageUrl } = product;
 
   const [showForm, setShowForm] = useState(false);
   const [name, setName] = useState('');
@@ -41,10 +38,6 @@ const SingleProduct = () => {
     dispatch(addCartAsync({ quantity, cartId, productId, name, price }));
   };
 
-  // useEffect(() => {
-  //   dispatch(fetchSingleProductAsync(id));
-  // }, []);
-
   useEffect(() => {
     dispatch(fetchSingleProductAsync(id));
   }, [dispatch, id]);
@@ -60,31 +53,6 @@ const SingleProduct = () => {
   }, [product]);
 
   if (!product) return null;
-
-  // return (
-  //   <div className="single_product">
-  //     <div className="single_product_name">
-  //       <p>{name}</p>
-  //     </div>
-  //     <p>{description}</p>
-  //     <p className="single_product_price">
-  //       <small>$</small>
-  //       <strong>{price}</strong>
-  //     </p>
-  //     <p>{quantity}</p>
-  //     <img id="single_image" src={imageUrl} alt="BLANK" />
-  //     {/* <button onClick={() => dispatch(addToCart(product))}>Add to Basket</button> */}
-  //     {isLoggedIn ? (
-  //       <button onClick={() => addToUserCart(product)}>
-  //         Add to Basket
-  //       </button>
-  //     ) : (
-  //       <button onClick={() => dispatch(addToCart(product))}>
-  //         Add to Basket
-  //       </button>
-  //     )}
-
-  //   </div>
 
   // For Size Buttons
   const sizeArr = [];
@@ -109,7 +77,6 @@ const SingleProduct = () => {
         </li>
         <li id="sizBtnLi">
           {sizeArr.map((currSize) => {
-            //! Mapping over sizeArr(written above) to create button for each size
             return (
               <button
                 key={currSize}
@@ -141,9 +108,6 @@ const SingleProduct = () => {
         <input value={imageUrl}onChange={(e)=>setImageUrl(e.target.value)} type="text" placeholder="imageUrl" />        
         <button type="submit">Submit</button>
       </form>) : null}
-
-
-
 
         {isLoggedIn ? (
           <li>

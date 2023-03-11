@@ -12,7 +12,7 @@ import {
   SignUp,
   UserCart,
   Payment,
-  OrderHx
+  UserInfo
 } from '../features/index.js';
 import { fetchProductsAsync } from '../slices/products/productSlice';
 
@@ -43,7 +43,7 @@ const AppRoutes = () => {
           <Route path="/products/:id" element={<SingleProduct />} />
           <Route path="/*" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/orderHx" element={<OrderHx />} />
+          <Route path="/userInfo" element={<UserInfo />} />
           <Route
             path="/login"
             element={<AuthForm name="login" displayName="Login" />}
@@ -61,11 +61,7 @@ const AppRoutes = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route
             path="/login"
-            element={<AuthForm name="login" displayName="Login" />}
-          />
-          <Route
-            path="/signup"
-            element={<AuthForm name="signup" displayName="Sign Up" />}
+            element={<AuthForm name="login" displayName="Sign In" />}
           />
         </Routes>
       )}

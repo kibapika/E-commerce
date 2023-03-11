@@ -2,11 +2,46 @@
     width: 100%;
     display: flex;
     flex-direction: row;
-    align-items: baseline;
+    align-items: center;
     justify-content: center;
     gap: 10px;
+    height: 10vh;
+    padding-top: 100px;
+    color: #242423;
+}
+
+#title {
+    color: #353535;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+#filterSecA{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.filterTitle {
+    font-size: 18px;
+    font-weight: 500;
+    padding-right: 10px;
 }
 
 #select {
     width: 150px;
+    height: 30px;
+    cursor: pointer;
+}
+
+#filterSecB{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkTitle {
+    padding: 8px;
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import TrendingFlatIcon from "@mui/icons-material/TrendingFlat";
 import EastIcon from "@mui/icons-material/East";
 import "./mainContent.css";
 
@@ -38,7 +37,6 @@ const MainContent = () => {
           <div id="hide4">Shop New Arrivals</div>
         </Link>
       </section>
-      <section></section>
     </div>
   );
 };

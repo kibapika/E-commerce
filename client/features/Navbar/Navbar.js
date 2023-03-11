@@ -2,9 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../../app/store.js";
-import mainlogo from "../../../public/pictures/mainlogo.png";
 import shoeLogo from "../../../public/pictures/shoeLogo.png"
-import { ShoppingBasket } from "@mui/icons-material";
 import ShoppingBagIcon from "@mui/icons-material/ShoppingBag";
 import "./navbar.css";
 
@@ -53,9 +51,7 @@ const Navbar = () => {
           <Link className="navLinks" to="/products">
             Explore
           </Link>
-          <Link className="navLinks" to="/orderHx">
-            Order History
-          </Link>
+          {isLoggedIn ? (<Link className="navLinks" to="/userInfo">User Info</Link>) : null}
         </div>
         {/* ---------------------------------------------------------------- */}
         <div id="rightNav">
@@ -64,6 +60,7 @@ const Navbar = () => {
               {/* The navbar will show these links after you log in */}
               <button
                 className="navLinks"
+                id="logoutBtn"
                 type="button"
                 onClick={logoutRedirect}
               >
@@ -71,13 +68,10 @@ const Navbar = () => {
               </button>
             </div>
           ) : (
-            <div id="rightNavBtn">
+            <div>
               {/* The navbar will show these links before you log in */}
               <Link className="navLinks" to="/login">
-                Login
-              </Link>
-              <Link className="navLinks" to="/signup">
-                Sign Up
+                Sign In
               </Link>
             </div>
           )}
