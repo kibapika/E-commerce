@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { authenticate } from "../../app/store";
 import axios from "axios";
 import { useState } from "react";
+import {fetchUsersAsync, selectUser} from "../../slices/userSlice";
 import "./UserInfo.css";
 
 const UserInfo = () => {
   const user = useSelector((state) => state.auth.me);
   const dispatch = useDispatch();
 
-  const [showUsers, setShowUsers] = useState(false);
-  const [users, setUsers] = useState([]);
+  const users = useSelector(selectUser);
+
   const [showInfo, setShowInfo] = useState(false);
   const [info, setInfo] = useState([]);
   const [showEditForm, setShowEditForm] = useState(false);
@@ -20,11 +20,10 @@ const UserInfo = () => {
     username : '',
   });
 
-  const getUsers = async () => {
-    const { data } = await axios.get('/api/users');
-    setUsers(data);
-    setShowUsers(true)
-  };
+  useEffect(() => {
+    console.log("use effect called setting uses");
+    dispatch(fetchUsersAsync());
+  }, []);
 
   const getInfo = async () => {
     try {
@@ -71,10 +70,7 @@ const UserInfo = () => {
 
   return (
     <div id="userInfoDiv">
-      {user && user.isAdmin ? (
-        <button onClick={getUsers}>User Info</button>
-      ) : null}
-      {showUsers ? (
+      {user.isAdmin ? (
         <table>
           <thead>
             <tr>
@@ -95,7 +91,7 @@ const UserInfo = () => {
         </table>
       ) : null}
 
-      {user && !user.isAdmin ? (
+      {!user.isAdmin ? (
         <button onClick={getInfo}>Update Info</button>
       ) : null}
       {showInfo ? (

@@ -6,6 +6,7 @@ import allProductsSlice from '../slices/products/productSlice';
 import singleProductSlice from '../slices/products/singleProductSlice';
 import userSlice from '../slices/userSlice';
 import cartSlice  from '../slices/cart/cartslice';
+import singleUserSlice from '../slices/singleUserSlice';
 // import {persistStore, persistReducer} from 'redux-persist';
 // import storage from 'redux-persist/lib/storage';
 
@@ -23,7 +24,8 @@ const store = configureStore({
     allProducts: allProductsSlice,
     singleProduct: singleProductSlice,
     cart: cartSlice,
-    users: userSlice
+    users: userSlice,
+    singleUsers: singleUserSlice
   },
   // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
