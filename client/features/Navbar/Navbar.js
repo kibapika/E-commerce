@@ -10,6 +10,7 @@ const Navbar = () => {
   const [hState, sethState] = useState("top");
 
   const isLoggedIn = useSelector((state) => !!state.auth.me.id);
+  const user = useSelector((state) => state.auth.me);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -51,7 +52,8 @@ const Navbar = () => {
           <Link className="navLinks" to="/products">
             Explore
           </Link>
-          {isLoggedIn ? (<Link className="navLinks" to="/userInfo">User Info</Link>) : null}
+          {isLoggedIn ? (<Link className="navLinks" to="/userInfo">
+            {user && user.isAdmin ? "Admin" : "User Info"} </Link>) : null}
         </div>
         {/* ---------------------------------------------------------------- */}
         <div id="rightNav">
