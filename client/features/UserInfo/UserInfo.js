@@ -71,17 +71,18 @@ const UserInfo = () => {
   return (
     <div id="userInfoDiv">
       {user.isAdmin ? (
-        <table>
-          <thead>
-            <tr>
+        <table id="adminTable">
+          <thead id="adminHead">
+          <h1 id="adminH1">Users Information</h1>
+            <tr id="adminTR">
               <th>Email</th>
               <th>Username</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody id="adminBody">
             {users.map((user) => {
               return (
-                <tr key={user.id}>
+                <tr key={user.id} id="adminTR">
                   <td>{user.email}</td>
                   <td>{user.username}</td>
                 </tr>
