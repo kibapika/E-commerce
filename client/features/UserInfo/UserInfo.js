@@ -93,23 +93,23 @@ const UserInfo = () => {
       ) : null}
 
       {!user.isAdmin ? (
-        <button onClick={getInfo}>Update Info</button>
+        <button onClick={getInfo} id="userUpdateBtn">Update Info</button>
       ) : null}
       {showInfo ? (
-        <table>
+        <table id="userTable">
           <thead>
-            <tr>
+            <tr id="userHead">
               <th>Email</th>
               <th>Username</th>
             </tr>
           </thead>
           <tbody>
             {info.map((user) => (
-              <tr key={user.id}>
+              <tr key={user.id} id="userTR">
                 <td>{user.email}</td>
                 <td>{user.username}</td>
                 <td>
-                  <button onClick={() => handleEdit(user.id)}>edit</button>
+                  <button onClick={() => handleEdit(user.id)}>Edit</button>
                 </td>
               </tr>
             ))}
@@ -118,10 +118,10 @@ const UserInfo = () => {
       ) : null}
 
       {showEditForm ? (
-        <form onSubmit={handleEditSubmit}>
-          <div>
+        <form onSubmit={handleEditSubmit} id="userEditForm">
+          <div id="userEditDiv1">
             <label htmlFor="email">
-              <small>Email</small>
+              <small>E-mail: </small>
             </label>
             <input
               name="email"
@@ -130,9 +130,9 @@ const UserInfo = () => {
               onChange={handleChange}
             />
           </div>
-          <div>
+          <div id="userEditDiv2">
             <label htmlFor="username">
-              <small>Username</small>
+              <small>Username: </small>
             </label>
             <input
               name="username"
@@ -141,8 +141,8 @@ const UserInfo = () => {
               onChange={handleChange}
             />
           </div>
-          <div>
-            <button type="submit">Update</button>
+          <div id="userEditBtn">
+            <button type="submit">Update Info</button>
           </div>
         </form>
       ) : null}
