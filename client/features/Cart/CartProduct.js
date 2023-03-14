@@ -32,7 +32,9 @@ const CartProduct = ({ id, imageUrl, name, price, size, quantity = 0 }) => {
   const decreaseQty = (item) => {
     let productId = item.id;
     let quantity = item.quantity;
-    quantity--;
+    if (quantity !== 0){
+      quantity--;
+    }
     let cartId = user.cartId;
     const updatedItem = { productId, quantity, cartId };
     dispatch(adjustQtyAsync(updatedItem));
@@ -45,16 +47,6 @@ const CartProduct = ({ id, imageUrl, name, price, size, quantity = 0 }) => {
     const updatedItem = { productId, cartId };
     dispatch(removeItemAsync(updatedItem))
   };
-
-  // const handleDelete = (evt) => {
-  //   // evt.preventDefault();
-  //   // let productId = item.id;
-  //   // let cartId = user.cartId;
-  //   const updatedItem =  evt ;
-  //   dispatch(removeItemAsync(updatedItem)).then(() => {
-  //     navigate("/cart");
-  //   });
-  // };
 
   return (
     <div>
@@ -74,10 +66,10 @@ const CartProduct = ({ id, imageUrl, name, price, size, quantity = 0 }) => {
         <div id='quantSect'>
           {isLoggedIn ? (
             <>
-              <button onClick={() => decreaseQty({ id, quantity })}>-</button>
-              <p>{quantity}</p>
-              <button onClick={() => increaseQty({ id, quantity })}>+</button>
-              <button onClick={() => handleDelete({ id })}>
+              <button className='quantBtns' onClick={() => decreaseQty({ id, quantity })}>-</button>
+              <p id='quantityNum'>{quantity}</p>
+              <button className='quantBtns' onClick={() => increaseQty({ id, quantity })}>+</button>
+              <button id='remove' onClick={() => handleDelete({ id })}>
                 Remove from Basket
               </button>
             </>

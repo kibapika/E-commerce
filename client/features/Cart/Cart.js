@@ -36,10 +36,10 @@ const Cart = () => {
         quantity={product.quantity}
           />
       ))}
+      <p id='totalText'>Total: ${cartTotal()}</p>
       <Link id="checkout" to="/payment">
         Proceed to checkout
       </Link>
-      <p id='totalText'>Total: ${cartTotal()}</p>
     </div>
   );
 };
