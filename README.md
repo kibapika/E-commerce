@@ -12,6 +12,7 @@ Built with ...
 - Sequelize
 - PSQL
 - React-Redux
+- Axios
 
 ## Setup Customize
 
