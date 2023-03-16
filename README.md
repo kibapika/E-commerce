@@ -2,6 +2,8 @@
 
 > Recreation of a e-commerce sites based on shoes.
 
+![HomePg](/Users/evali/Desktop/BootCamp/projects/ecommerce/E-commerce/Screenshots/HomePg.png)
+
 Built with ...
 
 - React
