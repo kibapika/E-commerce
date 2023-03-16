@@ -1,15 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import './singleProduct.css';
-import { addToCart, addCartAsync } from '../../slices/cart/cartslice';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
+import "./singleProduct.css";
+import { addToCart, addCartAsync } from "../../slices/cart/cartslice";
 import {
   fetchSingleProductAsync,
   selectSingleProduct,
   chooseSize,
-} from '../../slices/products/singleProductSlice';
-import axios from 'axios';
-
+} from "../../slices/products/singleProductSlice";
+import axios from "axios";
 
 const SingleProduct = () => {
   const dispatch = useDispatch();
@@ -22,17 +21,17 @@ const SingleProduct = () => {
   const product = useSelector(selectSingleProduct);
 
   const [showForm, setShowForm] = useState(false);
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [price, setPrice] = useState('');
-  const [quantity, setQuantity] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
   const addToUserCart = async (product) => {
     let quantity = 1;
     let cartId = user.cartId;
     let productId = product.id;
-    console.log('product', productId);
+    console.log("product", productId);
     let name = product.name;
     let price = product.price;
     dispatch(addCartAsync({ quantity, cartId, productId, name, price }));
@@ -70,19 +69,19 @@ const SingleProduct = () => {
           <p id="sneakTitle">{product.name}</p>
         </li>
         <li>
-          <p id="price">${product.price}</p>
+          <p id="sneakPrice">${product.price}</p>
         </li>
         <li>
-          <p id="sizeText">Sizes</p>
+          <p id="sneakSize">Select Sizes</p>
         </li>
-        <li id="sizBtnLi">
+        <li>
           {sizeArr.map((currSize) => {
             return (
               <button
                 key={currSize}
                 onClick={() => dispatch(chooseSize(currSize))}
                 className={
-                  currSize == product.size ? 'sizeBtns selected' : 'sizeBtns'
+                  currSize == product.size ? "sizeBtns selected" : "sizeBtns"
                 }
                 type="button"
               >
@@ -92,40 +91,79 @@ const SingleProduct = () => {
           })}
         </li>
 
-
-        {user.isAdmin ? (<button onClick={()=> setShowForm(true)}>Edit</button>): null} 
-      {showForm ? ( <form onSubmit={async(e)=>{ //show form when clicked
-          e.preventDefault();
-          const res=await axios.put(`/api/products/${id}`, {name, description, price, quantity, imageUrl}) //put request to update product
-          setShowForm(false); 
-          dispatch(fetchSingleProductAsync(id));
-          //hide form after submit
-      }}> 
-        <input value={name}onChange={(e)=>setName(e.target.value)} type="text" placeholder="name" /> 
-        <input value={description}onChange={(e)=>setDescription(e.target.value)} type="text" placeholder="description" />
-        <input value={price}onChange={(e)=>setPrice(e.target.value)} type="text" placeholder="price" />
-        <input value={quantity}onChange={(e)=>setQuantity(e.target.value)} type="text" placeholder="quantity" />
-        <input value={imageUrl}onChange={(e)=>setImageUrl(e.target.value)} type="text" placeholder="imageUrl" />        
-        <button type="submit">Submit</button>
-      </form>) : null}
-
         {isLoggedIn ? (
-          <li>
-            <button id="cartBtn" onClick={() => addToUserCart(product)}>
-              Add to cart
+          <li className="cartBtnLi">
+            <button className="cartBtn" onClick={() => addToUserCart(product)}>
+              Add to Bag
             </button>
           </li>
         ) : (
-          <li>
-            <button id="cartBtn" onClick={() => dispatch(addToCart(product))}>
-              Add to cart
+          <li className="cartBtnLi">
+            <button className="cartBtn" onClick={() => dispatch(addToCart(product))}>
+              Add to Bag
             </button>
           </li>
         )}
         <li>
-          <p className="prodDetail">Details</p>
-          <p className="prodDetail">{product.description}</p>
+          <h1 id="prodDetailH1">Description</h1>
+          <p id="prodDetailP">{product.description}</p>
         </li>
+
+        {user.isAdmin ? (
+          <button onClick={() => setShowForm(true)}>Edit Product</button>
+        ) : null}
+        {showForm ? (
+          <form
+            id="editForm"
+            onSubmit={async (e) => {
+              //show form when clicked
+              e.preventDefault();
+              const res = await axios.put(`/api/products/${id}`, {
+                name,
+                description,
+                price,
+                quantity,
+                imageUrl,
+              }); //put request to update product
+              setShowForm(false);
+              dispatch(fetchSingleProductAsync(id));
+              //hide form after submit
+            }}
+          >
+            <input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              type="text"
+              placeholder="name"
+            />
+            <input
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              type="text"
+              placeholder="description"
+              id="editFormDescp"
+            />
+            <input
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+              type="text"
+              placeholder="price"
+            />
+            <input
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
+              type="text"
+              placeholder="quantity"
+            />
+            <input
+              value={imageUrl}
+              onChange={(e) => setImageUrl(e.target.value)}
+              type="text"
+              placeholder="imageUrl"
+            />
+            <button type="submit">Submit</button>
+          </form>
+        ) : null}
       </ul>
     </div>
   );
