@@ -5,6 +5,7 @@ import './allProducts.css'
 import Filter from '../Filter/Filter'
 import star from '../../../public/pictures/star.png'
 import { deleteProductAsync, addProductAsync, selectAllProducts } from "../../slices/products/productSlice";
+import { SignalCellularNull } from "material-ui-icons";
 
 
 const AllProducts = () => {
@@ -90,6 +91,7 @@ const AllProducts = () => {
     return(
         <div id='allproductsDiv'>
             <Filter sortingFilter={sortingFilter} categoryFilter={categoryFilter} />
+            <AddProduct />
             <ul id="allProductsUl">
             {
                 filterProducts.map((product) => {
@@ -140,9 +142,10 @@ const AddProduct = () => {
     };
 
     return (
-        <div>
+        <div id="addDiv">
             {user && user.isAdmin ? (
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} id="addForm">
+                    <h1 id="addH1">Add Product</h1>
                     <input
                         type="text"
                         placeholder="Name"
@@ -176,17 +179,15 @@ const AddProduct = () => {
 
                     <button type="submit">Add Product</button>
                 </form>
-            ) : (
-                <h1></h1>
-            )}
+            ) : null}
         </div>
     );
 };
+
 const ProductPage = () => {
     return (
         <div>
             <AllProducts />
-            <AddProduct />
         </div>
     );
 }
