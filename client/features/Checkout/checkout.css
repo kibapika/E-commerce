@@ -1,13 +1,26 @@
 /* CHECKOUT STYLE */
 
 #checkoutDiv{
-    border: solid 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    font-size: 80px;
-    padding: 30px;
-    height: 500px;
-  }
+  margin-top: 130px;
+  margin-bottom: 25px;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#checkoutSect{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#checkoutH1 {
+  font-size: 50px;
+  margin: 0;
+}
+
+#checkoutP {
+  font-size: 30px;
+}
