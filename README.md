@@ -1,23 +1,17 @@
-# FS-App-Template
+# Soles --- E-Commerce Site 
 
-## Setup
+> Recreation of a e-commerce sites based on shoes.
 
-To use this as boilerplate, you'll need to take the following steps:
+Built with ...
 
-- Don't fork or clone this repo! Instead, create a new, empty
-  directory on your machine and `git init` (or create an empty repo on
-  Github and clone it to your local machine)
+- React
+- Express
+- Node.js
+- Sequelize
+- PSQL
+- React-Redux
 
-- Now you will have to add the fs-app-template as a remote and merge it into your own repository.
-
-```
-git remote add boilermaker git@github.com:FullstackAcademy/fs-app-template-v2.git
-git fetch boilermaker
-git merge boilermaker/main
-git branch -m master main
-```
-
-## Customize
+## Setup Customize
 
 Now that you've got the code, follow these steps to get acclimated:
 
