@@ -6,8 +6,6 @@ Soles
 Recreation of a e-commerce sites based on shoes built with <a href="https://github.com/facebook/create-react-app">React App</a>.
 </p>
 
-<h3 align="center"><a>Link to website</a></h3>
-
 ![HomePg](Screenshots/HomePg.png)
 
 Built with ...
